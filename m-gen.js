@@ -37,6 +37,8 @@ async function fetchDefaultMembersCsv() {
     return $.ajax({
         method: 'get',
         url: defaultMembersCsvName
+    }).catch(() => {
+        alert("member-list.csvが存在しません！");
     });
 }
 
