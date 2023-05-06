@@ -4,39 +4,61 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body style="width: 400px">
+  <body>
     <div id="dialog">
       <p>割り出す際は氏名欄が書かれたページに移動してから行ってください。</p>
-      <div id="message">検索中…</div>
+      <div class="main-output">
+        <p>
+          <label
+            ><input
+              id="shorten-mention-checkbox"
+              type="checkbox"
+              checked
+            />極小のメンションを使う</label
+          >
+        </p>
+        <p id="shorten-mention-explanation">
+          コピペして左から(候補が出るのを待って)エンターキーかタブキーで確定させてください。
+        </p>
+        <div id="message"></div>
+      </div>
       <div class="details-wrap">
         <details>
           <summary>詳細</summary>
-          <div>
-            <h3>総数:<span class="result count"></span>人</h3>
+          <div id="number-of-people">
+            <h3>総数:<span class="count"></span>人</h3>
           </div>
 
-          <div>
-            <h3>名前が見つかった人(カッコ内はヒットしたキーワード):</h3>
-            <p class="result submitted"></p>
+          <div id="submitted-members">
+            <h3>
+              名前が見つかった人(カッコ内はヒットしたキーワード)(<span
+                class="count"
+              ></span
+              >人):
+            </h3>
+            <p class="content"></p>
           </div>
 
-          <div>
-            <h3>名前が見つからなかった人:</h3>
-            <p class="result not-submitted"></p>
+          <div id="un-submitted-members">
+            <h3>名前が見つからなかった人(<span class="count"></span>人):</h3>
+            <p class="content"></p>
           </div>
 
-          <div>
-            <h3>全ての検索されたキーワード(正規表現):</h3>
-            <p class="result keywords"></p>
+          <div id="regexps">
+            <h3>
+              全ての検索されたキーワード(正規表現)(<span class="count"></span
+              >個):
+            </h3>
+            <p class="content"></p>
           </div>
 
-          <form>
+          <div class="members-csv-form">
             <h3>検索したメンバーズファイル:</h3>
             <p id="selected-file-display"></p>
             <h4>他のファイルを選択:</h4>
             <input type="file" id="input-csv" accept=".csv" />
-            <button type="reset">リセット</button>
-          </form>
+            <button id="reset-button">リセット</button>
+          </div>
         </details>
       </div>
     </div>
