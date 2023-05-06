@@ -1,6 +1,6 @@
 # インストール方法・使い方
 
-PDF ファイルを見てください。
+ルートフォルダ内の Mention Generator インストール方法.pdf を見てください。
 
 # member-list.csv の作り方
 

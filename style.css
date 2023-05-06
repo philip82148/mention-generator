@@ -2,6 +2,7 @@ body {
   width: 430px;
   background-color: rgb(240, 235, 248);
   font-size: 12px;
+  margin: 8px;
 }
 
 .wrap {
