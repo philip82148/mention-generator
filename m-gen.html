@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8"/>
-<link rel="stylesheet" href="style.css">
-<script src='jquery-3.6.0.min.js'></script>
-<script src='m-gen.js'></script>
-</head>
-<body style="width:400px;">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="m-gen.js" type="module"></script>
+  </head>
+  <body style="width: 400px">
     <div id="dialog">
-        <p>割り出す際は氏名欄が書かれたページに移動してから行ってください。</p>
-        <div id="message">検索中…</div>
-        <div class="details-wrap">
-            <details>
-                <summary>詳細</summary>
-                <div>
-                    <h3>総数:<span class="result count"></span>人</h3>
-                </div>
+      <p>割り出す際は氏名欄が書かれたページに移動してから行ってください。</p>
+      <div id="message">検索中…</div>
+      <div class="details-wrap">
+        <details>
+          <summary>詳細</summary>
+          <div>
+            <h3>総数:<span class="result count"></span>人</h3>
+          </div>
 
-                <div>
-                    <h3>名前が見つかった人(カッコ内はヒットしたキーワード):</h3>
-                    <p class="result submitted"></p>
-                </div>
+          <div>
+            <h3>名前が見つかった人(カッコ内はヒットしたキーワード):</h3>
+            <p class="result submitted"></p>
+          </div>
 
-                <div>
-                    <h3>名前が見つからなかった人:</h3>
-                    <p class="result not-submitted"></p>
-                </div>
+          <div>
+            <h3>名前が見つからなかった人:</h3>
+            <p class="result not-submitted"></p>
+          </div>
 
-                <div>
-                    <h3>全ての検索されたキーワード(正規表現):</h3>
-                    <p class="result keywords"></p>
-                </div>
+          <div>
+            <h3>全ての検索されたキーワード(正規表現):</h3>
+            <p class="result keywords"></p>
+          </div>
 
-                <form>
-                    <h3>検索したメンバーズファイル:</h3>
-                    <p class="selected-file"></p>
-                    <h4>他のファイルを選択:</h4>
-                    <input type="file" id="members-csv" accept=".csv"><button type="reset">リセット</button>
-                </form>
-            </details>
-        </div>
+          <form>
+            <h3>検索したメンバーズファイル:</h3>
+            <p class="selected-file"></p>
+            <h4>他のファイルを選択:</h4>
+            <input type="file" id="members-csv" accept=".csv" /><button
+              type="reset"
+            >
+              リセット
+            </button>
+          </form>
+        </details>
+      </div>
     </div>
-</body>
+  </body>
 </html>
