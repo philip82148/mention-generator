@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <p>割り出す際は氏名欄が書かれたページに移動してから行ってください。</p>
+    </div>
+    <div class="wrap main-output">
+      <div id="control">
+        <p>
+          <label
+            ><input
+              id="shorten-mention-checkbox"
+              type="checkbox"
+              checked
+            />極小のメンションを使う</label
+          >
+        </p>
+        <p id="shorten-mention-explanation">
+          コピペして左から(候補が出るのを待って)エンターキーかタブキーで確定させてください。
+        </p>
+      </div>
+      <div id="output"></div>
+    </div>
+    <details>
+      <summary>詳細</summary>
+      <div class="wrap" id="number-of-members">
+        <h3>総数:<span class="count"></span>人</h3>
+      </div>
+
+      <div class="wrap" id="submitted-members">
+        <h3>
+          名前が見つかった人(カッコ内はヒットしたキーワード)(<span
+            class="count"
+          ></span
+          >人):
+        </h3>
+        <p class="content"></p>
+      </div>
+
+      <div class="wrap" id="un-submitted-members">
+        <h3>名前が見つからなかった人(<span class="count"></span>人):</h3>
+        <p class="content"></p>
+      </div>
+
+      <div class="wrap" id="regexps">
+        <h3>
+          全ての検索されたキーワード(正規表現)(<span class="count"></span>個):
+        </h3>
+        <p class="content"></p>
+      </div>
+
+      <div class="wrap">
+        <h3>検索したメンバーズファイル:</h3>
+        <p id="selected-file-display"></p>
+        <h4>他のファイルを選択:</h4>
+        <div class="flex-div">
+          <input type="file" id="input-csv" accept=".csv" />
+          <button id="reset-button">リセット</button>
+        </div>
+      </div>
+    </details>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>

@@ -1,10 +1,10 @@
 {
-	"name": "Mention Generator",
-	"version": "5.2",
-	"manifest_version": 3,
-	"description": "ページ上で全員の名前を検索し、ヒットしなかった人のLINEのメンション文を生成します。",
-	"action": {
-	  "default_popup": "m-gen.html"
-	},
-	"permissions": ["activeTab", "scripting"]
+  "name": "Mention Generator",
+  "version": "5.2",
+  "manifest_version": 3,
+  "description": "ページ上で全員の名前を検索し、ヒットしなかった人のLINEのメンション文を生成します。",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["activeTab", "scripting"]
 }
