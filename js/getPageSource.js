@@ -14,7 +14,7 @@ export async function fetchPageSource() {
       chrome.scripting.executeScript(
         {
           target: { tabId: tabs[0].id, allFrames: true },
-          files: ["getPageSourceInjectionCode.js"],
+          files: ["js/getPageSourceInjectionCode.js"],
         },
         () => {
           if (chrome.runtime.lastError)
