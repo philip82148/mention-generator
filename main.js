@@ -1,6 +1,6 @@
 import { csvFileToArray, csvUrlToArray } from "./csv-js/csv.js";
 import { fetchPageSource } from "./getPageSource.js";
-import { generateMentions } from "./generateMention.js";
+import { generateMentions } from "./generateMentions.js";
 import { showBanner } from "./showBanner.js";
 
 const DefaultInputCsvPath = "member-list.csv";
@@ -23,6 +23,8 @@ $(() => {
 
 async function main() {
   try {
+    $("#control").show();
+
     let shortenMentions = $("#shorten-mention-checkbox").prop("checked");
     if (shortenMentions) {
       $("#shorten-mention-explanation").show();
@@ -30,7 +32,7 @@ async function main() {
       $("#shorten-mention-explanation").hide();
     }
 
-    $("#message").text("検索中…");
+    $("#output").text("検索中…");
 
     const csvArray = await (async () => {
       const inputFile = $("#input-csv").prop("files")[0];
@@ -49,10 +51,10 @@ async function main() {
     const { mentions, submittedMembers, unSubmittedMembers, regexps } =
       generateMentions(csvArray, pageSource, shortenMentions);
 
-    $("#message").html(`<h3>未回答者</h3>`);
+    $("#output").html(`<h2>未回答者</h2>`);
     if (!unSubmittedMembers.length) {
       const $p = $("<p>おめでとうございます！未回答者0人です！</p>");
-      $("#message").append($p);
+      $("#output").append($p);
     } else {
       do {
         const _20mentionString = mentions.splice(0, 20).join(" ");
@@ -62,16 +64,16 @@ async function main() {
 
           navigator.clipboard.writeText(_20mentionString).then(() => {
             let startString = "";
-            if (mention.length <= 9) {
+            if (_20mentionString.length <= 9) {
               startString = _20mentionString;
             } else {
               startString =
-                _20mentionString.substring(0, 6).replace(/\s*@$/, "") + "...";
+                _20mentionString.substring(0, 9).replace(/\s*@$/, "") + "...";
             }
             showBanner(startString + "をコピーしました。");
           });
         });
-        $("#message").append($p);
+        $("#output").append($p);
       } while (mentions.length);
     }
 
@@ -93,7 +95,8 @@ async function main() {
       regexps.map((regexp) => regexp.toString()).join("、")
     );
   } catch (e) {
-    $("#message").text(`エラーが発生しました: ${e}`);
+    $("#control").hide();
+    $("#output").text(`エラーが発生しました: ${e}`);
     throw e;
   }
 }

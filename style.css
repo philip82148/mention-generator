@@ -4,55 +4,45 @@ body {
   font-size: 12px;
 }
 
-body > p {
-  margin: 14px 8px;
+.wrap {
+  padding: 20px 14px;
+}
+
+.wrap > p {
+  margin: 0;
+}
+
+.wrap > h3 {
+  margin-top: 0;
 }
 
 .main-output {
   border-top: 1px solid #333;
   border-bottom: 1px solid #333;
-  padding: 15px 14px;
 }
 
-.main-output p:first-child {
-  /*        padding: 15px 10px;*/
-  margin: 0;
-}
-
-#shorten-mention-explanation {
-  margin: 2px 4px 1.4em;
-}
-
-.main-output .mentions p {
-  margin: 0 4px 2em;
-  font-weight: 700;
-}
-
-.main-output .mentions p:last-child {
-  margin-bottom: 1em;
+.main-output p {
+  padding: 0 6px;
 }
 
 summary {
-  padding: 12px 18px;
+  margin: 12px 18px;
 }
 
-details > div {
+details > .wrap {
   border-top: 1px solid #333;
-  /*        padding: 0 10px;*/
-  padding: 0px 12px;
-  margin: 0 0 10px;
 }
 
-.members-csv-form {
-  border-top: 1px solid #333;
-  /*        padding: 0 10px;*/
-  padding: 0px 12px;
-  margin: 0 0 15px;
+details > .wrap > h3 {
+  margin: 0;
 }
 
-details p {
-  /*        padding: 0 10px;*/
-  margin: 0 6px;
+details .content {
+  margin: 7px 7px 0;
+}
+
+details .content:empty {
+  margin: 0;
 }
 
 .banner {

@@ -5,9 +5,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="dialog">
+    <div class="wrap">
       <p>割り出す際は氏名欄が書かれたページに移動してから行ってください。</p>
-      <div class="main-output">
+    </div>
+    <div class="wrap main-output">
+      <div id="control">
         <p>
           <label
             ><input
@@ -20,48 +22,45 @@
         <p id="shorten-mention-explanation">
           コピペして左から(候補が出るのを待って)エンターキーかタブキーで確定させてください。
         </p>
-        <div id="message"></div>
       </div>
-      <div class="details-wrap">
-        <details>
-          <summary>詳細</summary>
-          <div id="number-of-people">
-            <h3>総数:<span class="count"></span>人</h3>
-          </div>
-
-          <div id="submitted-members">
-            <h3>
-              名前が見つかった人(カッコ内はヒットしたキーワード)(<span
-                class="count"
-              ></span
-              >人):
-            </h3>
-            <p class="content"></p>
-          </div>
-
-          <div id="un-submitted-members">
-            <h3>名前が見つからなかった人(<span class="count"></span>人):</h3>
-            <p class="content"></p>
-          </div>
-
-          <div id="regexps">
-            <h3>
-              全ての検索されたキーワード(正規表現)(<span class="count"></span
-              >個):
-            </h3>
-            <p class="content"></p>
-          </div>
-
-          <div class="members-csv-form">
-            <h3>検索したメンバーズファイル:</h3>
-            <p id="selected-file-display"></p>
-            <h4>他のファイルを選択:</h4>
-            <input type="file" id="input-csv" accept=".csv" />
-            <button id="reset-button">リセット</button>
-          </div>
-        </details>
-      </div>
+      <div id="output"></div>
     </div>
+    <details>
+      <summary>詳細</summary>
+      <div class="wrap" id="number-of-people">
+        <h3>総数:<span class="count"></span>人</h3>
+      </div>
+
+      <div class="wrap" id="submitted-members">
+        <h3>
+          名前が見つかった人(カッコ内はヒットしたキーワード)(<span
+            class="count"
+          ></span
+          >人):
+        </h3>
+        <p class="content"></p>
+      </div>
+
+      <div class="wrap" id="un-submitted-members">
+        <h3>名前が見つからなかった人(<span class="count"></span>人):</h3>
+        <p class="content"></p>
+      </div>
+
+      <div class="wrap" id="regexps">
+        <h3>
+          全ての検索されたキーワード(正規表現)(<span class="count"></span>個):
+        </h3>
+        <p class="content"></p>
+      </div>
+
+      <div class="wrap">
+        <h3>検索したメンバーズファイル:</h3>
+        <p id="selected-file-display"></p>
+        <h4>他のファイルを選択:</h4>
+        <input type="file" id="input-csv" accept=".csv" />
+        <button id="reset-button">リセット</button>
+      </div>
+    </details>
     <script src="jquery-3.6.0.min.js"></script>
     <script src="main.js" type="module"></script>
   </body>
