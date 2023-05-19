@@ -29,7 +29,8 @@ async function main() {
     const inputFile = $("#input-csv").prop("files")[0];
     if (inputFile) {
       try {
-        $("#selected-file-display").html(`<b>${inputFile.name}</b>`);
+        const $b = $(`<b></b>`).text(inputFile.name);
+        $("#selected-file-display").empty().append($b);
         return await csvFileToArray(inputFile);
       } catch (e) {
         $("#control").hide();
@@ -40,9 +41,8 @@ async function main() {
       }
     } else {
       try {
-        $("#selected-file-display").html(
-          `インストールフォルダ内:<b>${DefaultInputCsvPath}</b>`
-        );
+        const $b = $(`<b></b>`).text(DefaultInputCsvPath);
+        $("#selected-file-display").text(`インストールフォルダ内:`).append($b);
         return await csvUrlToArray(DefaultInputCsvPath);
       } catch (e) {
         $("#control").hide();
@@ -82,7 +82,7 @@ async function main() {
   } else {
     do {
       const _20mentionString = mentions.splice(0, 20).join(" ");
-      const $p = $(`<p>${_20mentionString}</p>`);
+      const $p = $(`<p></p>`).text(_20mentionString);
       $p.click(() => {
         if (!navigator.clipboard) return;
 
