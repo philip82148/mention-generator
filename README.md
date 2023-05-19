@@ -2,7 +2,7 @@
 
 ルートフォルダ内の Mention Generator インストール方法.pdf を見てください。
 
-# member-list.csv の作り方
+## member-list.csv の作り方
 
 member-list-sample.csv を参考にして以下のように作成してください。
 
@@ -21,7 +21,7 @@ member-list-sample.csv を参考にして以下のように作成してくださ
 
 ### 参考
 
-```
+```excel
 LEFT(A2,FIND(" ",A2)-1)、MID(A2,FIND(" ",A2)+1,1000)
 ```
 
