@@ -42,7 +42,7 @@ function searchForMember(csvRow, pageSource) {
     // 空白は空白を任意の数含む文字として検索
     const regexp = new RegExp(
       escapeRegexp(searchKeyword).replace(/[ 　]+/g, "( |　|&nbsp;)*"),
-      "ig"
+      "gi"
     );
     regexps.push(regexp);
 
